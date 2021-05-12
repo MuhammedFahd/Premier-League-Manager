@@ -1,0 +1,95 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <div class="header">
+    <h1>!WELCOME TO PREMIER LEAGUE MANAGER!</h1>
+  </div>
+  <div class="body" style="background-image: url('./assets/bg3.jpg');">
+  <div class="standings">
+    <h2>Premier League Table</h2><hr>
+    <label for="sort-options">Select a sort method:</label>
+    <select id="sort-options" (change)="selectChangeHandler($event)">
+      <option value="points">Points</option>
+      <option value="wins">Wins</option>
+      <option value="goals">Goals Scored</option>
+    </select><br><br>
+    <table class="leagueTable">
+      <tr>
+        <th>Name</th>
+        <th>matches played</th>
+        <th>wins</th>
+        <th>draws</th>
+        <th>defeats</th>
+        <th>points</th>
+      </tr>
+      <tr *ngFor="let ft of footballClubs">
+        <td>{{ft.name}}</td>
+        <td>{{ft.noOfMatchesPlayed}}</td>
+        <td>{{ft.wins}}</td>
+        <td>{{ft.draws}}</td>
+        <td>{{ft.defeats}}</td>
+        <td>{{ft.noOfPoints}}</td>
+      </tr>
+    </table>
+
+  </div><br><br>
+
+  <div class="matches">
+    <h2>Played Matches Table</h2><hr>
+    <label for="sort-date">Sort according to the date:</label>
+    <button id="sort-date" (click)="sort()">Sort</button><br><br>
+    <input type="text" placeholder="dd/mm/yyyy" #search>
+    <button (click)="getSearchVal(search)">search</button><br><br>
+    <table class="leagueTable">
+      <tr>
+        <th>home team</th>
+        <th>away team</th>
+        <th>goals scored by home team</th>
+        <th>goals scored by away team</th>
+        <th>match date</th>
+      </tr>
+      <tr *ngFor="let tt of matchesPlayed">
+        <td>{{tt.homeTeam.name}}</td>
+        <td>{{tt.awayTeam.name}}</td>
+        <td>{{tt.noOfGoalsScoredByHomeTeam}}</td>
+        <td>{{tt.noOfGoalsScoredByAwayTeam}}</td>
+        <td>{{tt.matchPlayedDate.date}}</td>
+      </tr>
+    </table><br><br>
+    <label for="generate">Generate a random played match:</label>
+    <button id="generate" (click)="generate()">generate</button><br><br>
+    <table class="leagueTable">
+      <tr>
+        <th>home team</th>
+        <th>away team</th>
+        <th>goals scored by home team</th>
+        <th>goals scored by away team</th>
+        <th>match date</th>
+      </tr>
+      <tr *ngFor="let mt of randomMatchPlayed">
+        <td>{{mt.homeTeam.name}}</td>
+        <td>{{mt.awayTeam.name}}</td>
+        <td>{{mt.noOfGoalsScoredByHomeTeam}}</td>
+        <td>{{mt.noOfGoalsScoredByAwayTeam}}</td>
+        <td>{{mt.matchPlayedDate.date}}</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <div class="footer">
+    <span><br>
+			<div>
+				Need Help?<br>Call Us:<br>0769021688<br><br>
+				General Enquiries:<br>fahad.2019656@iit.ac.lk
+      </div>
+		</span>
+    <span><br><br>
+  <div>
+    &copy; 2020 FAHD FAZAL. ALL RIGHTS RESERVED.<br><br>
+    <!--quick links-->
+    <a href="#" class="bottom-links">Sitemap |</a>
+    <a href="#" class="bottom-links"> Privacy Policy |</a>
+    <a href="#" class="bottom-links"> Terms and Conditions</a>
+  </div>
+  </span>
+  </div>
+</div>
