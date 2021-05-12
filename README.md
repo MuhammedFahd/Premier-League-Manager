@@ -6,7 +6,7 @@ This is a premier league management system which was created using Java and Angu
 
 Download link: https://drive.google.com/drive/folders/1XDzpArsr8vym2E-i3YuDoBn_N7CQVeur?usp=sharing
 
-5. Install all the needed node packages.
+2. Install all the needed node packages.
 
 ### HOW TO RUN  
 Go to the terminal and type **sbt run**
